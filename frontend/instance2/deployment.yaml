@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo-frontend2
+  namespace: podinfo-frontend2
   labels:
     app: podinfo
     tier: frontend

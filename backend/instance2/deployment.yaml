@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo-backend2
+  namespace: podinfo-backend2
   labels:
     app: podinfo
     tier: backend
