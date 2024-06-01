@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo-frontend2
+  namespace: podinfo-frontend2
+  labels:
+    app: podinfo
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podinfo
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: podinfo
+        tier: frontend
+    spec:
+      containers:
+        - name: podinfo
+          image: ghcr.io/stefanprodan/podinfo:latest
+          ports:
+            - containerPort: 9898
+          env:
+            - name: PODINFO_UI_MESSAGE
+              value: "Frontend instance 2"

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo-backend1
+  namespace: podinfo-backend1
+  labels:
+    app: podinfo
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podinfo
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: podinfo
+        tier: backend
+    spec:
+      containers:
+        - name: podinfo
+          image: ghcr.io/stefanprodan/podinfo:6.5.4
+          ports:
+            - containerPort: 9898
+          env:
+            - name: PODINFO_UI_MESSAGE
+              value: "Backend instance 1"
