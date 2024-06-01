@@ -1,0 +1,5 @@
+resources:
+  - ./backend/instance1
+  - ./backend/instance2
+  - ./frontend/instance1
+  - ./frontend/instance2
